@@ -44,7 +44,7 @@ def inputFiles():
 
 def runsAndLumis():
     if hasattr(PSet.process.source, "lumisToProcess"):
-         lumis = PSet.process.source.lumisToProcess
+         lumis = PSet.process.source.lumisToProcess # pylint: disable=E1103
 	 runsAndLumis={}
  	 for l in lumis:
   	     if "-" in  l:
