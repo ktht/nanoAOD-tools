@@ -12,4 +12,4 @@ PyJetParametersWrapper::PyJetParametersWrapper()
 
 PyJetParametersWrapper::PyJetParametersWrapper(std::initializer_list<typename value_type::value_type> init)
   : JME::JetParameters(init)
-{
+{}
