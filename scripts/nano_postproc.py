@@ -36,19 +36,26 @@ if __name__ == "__main__":
     outdir = args[0]; args = args[1:]
 
     modules = []
-    for mod, names in options.imports: 
+    print("Printing modules")
+    for mod, names in options.imports:
+        print("Module = {}, names = {}".format(mod, name))
         import_module(mod)
         obj = sys.modules[mod]
         selnames = names.split(",")
+        print("selnames = {}".format(selnames))
         mods = dir(obj)
         for name in selnames:
+            print("name = {}".format(name))
             if name in mods:
+                print("name is in mods")
                 print "Loading %s from %s " % (name, mod)
                 if type(getattr(obj,name)) == list:
                     for mod in getattr(obj,name):
                         modules.append( mod())
                 else:
                     modules.append(getattr(obj,name)())
+            else:
+                print("name is not in mods")
     if options.noOut:
         if len(modules) == 0: 
             raise RuntimeError("Running with --noout and no modules does nothing!")
