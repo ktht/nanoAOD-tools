@@ -38,7 +38,7 @@ if __name__ == "__main__":
     modules = []
     print("Printing modules")
     for mod, names in options.imports:
-        print("Module = {}, names = {}".format(mod, name))
+        print("Module = {}, names = {}".format(mod, names))
         import_module(mod)
         obj = sys.modules[mod]
         selnames = names.split(",")
