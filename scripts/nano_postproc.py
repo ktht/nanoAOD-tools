@@ -41,9 +41,11 @@ if __name__ == "__main__":
         print("Module = {}, names = {}".format(mod, names))
         import_module(mod)
         obj = sys.modules[mod]
+        print(obj)
         selnames = names.split(",")
         print("selnames = {}".format(selnames))
         mods = dir(obj)
+        print(mods)
         for name in selnames:
             print("name = {}".format(name))
             if name in mods:
